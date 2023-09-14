@@ -1,7 +1,21 @@
+import React, {useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import GA4 from '../GA4';
 
 function App() {
+
+  const ga = new GA4()
+
+  const setupGA = () => {
+    console.log(">>> setupGA");
+    ga.getGA("G-9W1T595FK3")
+  }
+
+  useEffect(() => {
+    setupGA()
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
